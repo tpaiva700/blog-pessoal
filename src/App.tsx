@@ -4,23 +4,26 @@ import React from 'react';
 import Login from './paginas/Login/Login';
 import Footer from './components/Footer/Footer';
 import NavBar from './components/NavBar/NavBar';
+import Cadastro from './paginas/Cadastro/Cadastro';
+import { AuthProvider } from './context/AuthContext';
 
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <BrowserRouter>
         <NavBar />
           <div className='min-h [80vh]'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/cadastro' element={<Cadastro />} />
             <Route path='/home' element={<Home />} />
           </Routes>
           </div>
           <Footer />
       </BrowserRouter>  
-    </>
+    </AuthProvider>
   );
 }
 
