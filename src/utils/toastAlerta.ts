@@ -44,6 +44,17 @@ export function toastAlerta(mensagem: string, tipo: string) {
             });
             break;
 
-            
+        default:
+            toast.info(mensagem, {
+            position: 'top-right',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: 'colored',
+            progress: undefined,
+            });
+            break;
     }
 }

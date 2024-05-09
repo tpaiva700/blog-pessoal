@@ -5,6 +5,7 @@ import { AuthContext } from "../../../context/AuthContext";
 import { buscar } from "../../../sevices/Service";
 import { Dna } from "react-loader-spinner";
 import CardPostagem from "../CardPostagem/CardPostagem";
+import { toastAlerta } from "../../../utils/toastAlerta";
 
 function ListaPostagem(){
     //Criamos uma Var de Estado - Registra um Array que possuí os objetos da model Postagem
@@ -20,7 +21,7 @@ function ListaPostagem(){
     //Verifica se o User tá logado
     useEffect(() => {
         if (token === ''){
-            alert("Você precisa estar logado!")
+            toastAlerta('Você precisa estar logado', 'info');
             navigate('/');
         }
     }, [token]);
@@ -35,7 +36,7 @@ function ListaPostagem(){
             })
         } catch (error: any){
             if(error.toString().includes('403')){
-                alert('O token expirou, favor logar novamente ')
+                toastAlerta('O token expirou, favor logar novamente', 'info');
                 handleLogout();
             }
         }

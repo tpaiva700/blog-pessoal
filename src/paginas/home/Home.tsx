@@ -22,7 +22,8 @@ const Home = () => {
                         </div>
 
                     </div>
-                    <div className="flex justify-center">
+                    
+                    <div className="flex-grow justify-center">
                         <img src={homeLogo} alt="" className="w-2/3" />
                     </div>
                 </div>
