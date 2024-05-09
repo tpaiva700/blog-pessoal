@@ -1,14 +1,22 @@
 import { LinkedinLogo } from "@phosphor-icons/react";
 import { GithubLogo } from "@phosphor-icons/react/dist/ssr";
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 function Footer() {
 
-    return (
+    const { usuario, handleLogout } = useContext(AuthContext);
+
+    let footerComponent; 
+
+    let data = new Date().getFullYear();
+
+    if(usuario.token !== '') {
+        footerComponent = (
         <>
             <div className="flex justify-center bg-cyan-950 text-white">
                 <div className="container flex flex-col items-center py-4">
-                    <p className="text-xl font-bold">Blog Pessoal Thaís | Copyright: </p>
+                    <p className="text-xl font-bold">Blog Pessoal Thaís | Copyright: {data} </p>
                     <p className="text-lg">Redes sociais</p>
                     <div className="flex gap-2">
                         <LinkedinLogo size={48} weight="bold" />
@@ -16,6 +24,13 @@ function Footer() {
                     </div>
                 </div>
             </div>
+        </>
+        )
+    }
+
+    return (
+        <>
+           {footerComponent} 
         </>
     )
 }

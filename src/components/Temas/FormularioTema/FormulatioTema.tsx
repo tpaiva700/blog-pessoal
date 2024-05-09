@@ -8,7 +8,7 @@ function FormularioTema() {
 
     const [tema, setTema] = useState<Tema>({} as Tema);
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
   
     const { id } = useParams<{ id: string }>();
   
@@ -39,7 +39,7 @@ function FormularioTema() {
     }
   
     async function gerarNovoTema(e: ChangeEvent<HTMLFormElement>) {
-      e.preventDefault()
+        e.preventDefault()
   
       if (id !== undefined) {
         try {
@@ -77,11 +77,10 @@ function FormularioTema() {
             alert('O token expirou, favor logar novamente')
             handleLogout()
           } else {
-            alert('Erro ao cadastrado o Tema')
+            alert('Erro ao cadastro do Tema')
           }
         }
       }
-  
       retornar()
     }
   

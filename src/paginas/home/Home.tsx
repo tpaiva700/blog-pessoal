@@ -1,5 +1,9 @@
 import React from "react";
+import homeLogo from '../../assets/home.png'
 import './Home.css';
+import ListaPostagem from "../../components/Postagens/ListaPostagem/ListaPostagem";
+import ModalPostagem from "../../components/Postagens/ModalPostagem/ModalPostagem";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     return (
@@ -11,15 +15,19 @@ const Home = () => {
                         <p className="text-x1">Expresse aqui seus pensamentos e opniões!</p>
 
                         <div className="flex justify-around gap-4">
-                            <button className="rounded bg-white text-blue-600 py-2 px-4">Ver Postagens</button>
+                            <ModalPostagem />
+                            <button className="rounded bg-white text-blue-600 py-2 px-4">
+                                <Link to="/postagens">Ver Postagens</Link>
+                            </button>
                         </div>
 
                     </div>
                     <div className="flex justify-center">
-                        <img src=""></img>
+                        <img src={homeLogo} alt="" className="w-2/3" />
                     </div>
                 </div>
             </div>
+            <ListaPostagem />
         </>
     )
 }
