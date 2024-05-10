@@ -3,7 +3,7 @@ import axios from "axios";
 //Criando a conexão do Front com o Back
 
 const api = axios.create({
-    baseURL: "https://blogpessoal-i5fs.onrender.com"
+    baseURL: import.meta.env.VITE_API_URL
 });
 
 //Funções 
