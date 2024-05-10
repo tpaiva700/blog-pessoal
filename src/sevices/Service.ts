@@ -1,7 +1,7 @@
 import axios from "axios";
 
 //Criando a conexão do Front com o Back
-
+//Alteração
 const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL
 });
